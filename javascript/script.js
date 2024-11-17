@@ -85,10 +85,13 @@ function saveData() {
     }
 }
 
+// Funsi ini agar datanya selalu tersimpan meski di-refresh
+
 function loadDataFromStorage() {
     const serializedData = localStorage.getItem(STORAGE_KEY);
     let data = JSON.parse(serializedData);
 
+    // memasukan satu persatu data dari object ke array todos
     if (data !== null) {
         for (const todo of data) {
             todos.push(todo);
@@ -226,6 +229,8 @@ document.addEventListener(SAVED_EVENT, () => {
     console.log(localStorage.getItem(STORAGE_KEY));
 });
 
+// addTodo.addEventListener('click')
+
 document.addEventListener(RENDER_EVENT, function () {
     // console.log(todos);
     const uncompletedTODOList = document.getElementById('todos');
@@ -247,3 +252,9 @@ document.addEventListener(RENDER_EVENT, function () {
             completedTODOList.append(todoElement);
     };
 });
+
+function alert(string) {
+    console.log(string);
+  }
+  
+  alert('Dicoding Indonesia');
