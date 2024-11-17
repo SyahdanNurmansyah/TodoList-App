@@ -252,9 +252,3 @@ document.addEventListener(RENDER_EVENT, function () {
             completedTODOList.append(todoElement);
     };
 });
-
-function alert(string) {
-    console.log(string);
-  }
-  
-  alert('Dicoding Indonesia');
